@@ -12,7 +12,7 @@ public class Ticket {
     private int age;
     private int km;
 
-    public Ticket(int age, int km) {
+    public Ticket(int age, int km) throws IllegalArgumentException {
         if (age <= 0) {
             throw new IllegalArgumentException("Age cannot be negative");
         }

@@ -8,6 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class TicketTest {
 
     @Test
+    void testCosnstructor(){
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(-50,100));
+        assertThrows(IllegalArgumentException.class, () -> new Ticket(50,-100));
+        assertDoesNotThrow(()-> new Ticket(50,25));
+    }
+
+    @Test
     void getPriceTicket() {
         Ticket ticket = new Ticket(25,100);
         assertEquals(21.0,ticket.getPriceTicket());
